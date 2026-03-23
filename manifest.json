@@ -1,0 +1,16 @@
+{
+  "entities": [
+    {
+      "cik": "2059436",
+      "name": "Blue Owl Alternative Credit Fund",
+      "entity_type": "40_ACT",
+      "snapshot_file": "snapshots/2059436.json"
+    },
+    {
+      "cik": "1735964",
+      "name": "Cliffwater Corporate Lending Fund",
+      "entity_type": "40_ACT",
+      "snapshot_file": "snapshots/1735964.json"
+    }
+  ]
+}

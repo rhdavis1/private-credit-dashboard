@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Credit Analysis Platform</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="header-left">
+      <span class="site-title">Private Credit Analysis Platform</span>
+    </div>
+    <div class="header-center">
+      <select id="entity-select" class="entity-select">
+        <option value="">Loading…</option>
+      </select>
+    </div>
+    <div class="header-right" id="header-meta">
+      <!-- period + domain badges injected by JS -->
+    </div>
+  </header>
+
+  <div id="summary-bar">
+    <!-- summary cards injected by JS -->
+  </div>
+
+  <div id="tab-nav">
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn"        data-tab="holdings">Holdings</button>
+      <button class="tab-btn"        data-tab="capital">Capital / NAV</button>
+      <button class="tab-btn"        data-tab="flows">Flows / Payouts</button>
+      <button class="tab-btn"        data-tab="compare">Compare</button>
+    </nav>
+  </div>
+
+  <main id="tab-content">
+    <div class="loading">Loading…</div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
