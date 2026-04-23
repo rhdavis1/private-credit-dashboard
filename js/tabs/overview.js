@@ -35,11 +35,11 @@ function renderEntityBlock(data) {
         </div>
         <div class="kv-item">
           <div class="kv-label">Snapshot Period</div>
-          <div class="kv-value">${ep.period_end_date}</div>
+          <div class="kv-value">${ep?.period_end_date ?? '—'}</div>
         </div>
         <div class="kv-item">
           <div class="kv-label">Filings in Window</div>
-          <div class="kv-value">${sm.canonical_filings} / ${sm.filings_in_window}</div>
+          <div class="kv-value">${sm ? `${sm.canonical_filings} / ${sm.filings_in_window}` : '—'}</div>
           <div class="kv-sub">canonical / total</div>
         </div>
       </div>
@@ -51,6 +51,7 @@ function renderEntityBlock(data) {
 
 function renderFinancialsBlock(data) {
   const f = data.financials;
+  if (!f) return '';
   // Compute leverage as debt / total assets; suppress when debt unknown.
   const leverage = (f.total_debt != null && f.total_assets)
     ? (f.total_debt / f.total_assets) * 100
@@ -145,6 +146,7 @@ function renderFlowsSummary(data) {
 
 function renderHoldingsSummary(data) {
   const hs  = data.holdings_summary;
+  if (!hs?.by_asset_category) return '';
   const cats = [...hs.by_asset_category]
     .filter(c => c.value_usd > 0)
     .sort((a, b) => b.value_usd - a.value_usd)
@@ -213,6 +215,7 @@ function renderHoldingsSummary(data) {
 
 function renderCapBrief(data) {
   const cs = data.capital_structure;
+  if (!cs?.items?.length && cs?.total_debt == null) return '';
   return `
     <div class="section">
       <div class="section-header">
@@ -251,8 +254,9 @@ function renderDataQuality(data) {
   const dq = data.data_quality;
   const sm = data.source_metadata;
 
-  const warningHtml = dq.warnings.length > 0
-    ? `<ul class="warnings-list">${dq.warnings.map(w =>
+  const warnings = dq?.warnings || [];
+  const warningHtml = warnings.length > 0
+    ? `<ul class="warnings-list">${warnings.map(w =>
         `<li class="warning-item">${w}</li>`).join('')}</ul>`
     : '';
 
@@ -272,19 +276,19 @@ function renderDataQuality(data) {
         </div>
         <div class="quality-row">
           <span class="quality-key">Periods with Metrics</span>
-          <span class="quality-val">${sm.periods_with_metrics}</span>
+          <span class="quality-val">${sm?.periods_with_metrics ?? '—'}</span>
         </div>
         <div class="quality-row">
           <span class="quality-key">Periods with Holdings</span>
-          <span class="quality-val">${sm.periods_with_holdings}</span>
+          <span class="quality-val">${sm?.periods_with_holdings ?? '—'}</span>
         </div>
         <div class="quality-row">
           <span class="quality-key">Periods with Cap Structure</span>
-          <span class="quality-val">${sm.periods_with_capital_structure}</span>
+          <span class="quality-val">${sm?.periods_with_capital_structure ?? '—'}</span>
         </div>
         <div class="quality-row">
           <span class="quality-key">Ingest Run ID</span>
-          <span class="quality-val">${sm.ingest_run_id}</span>
+          <span class="quality-val">${sm?.ingest_run_id ?? '—'}</span>
         </div>
       </div>
       ${warningHtml}

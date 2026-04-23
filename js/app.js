@@ -71,12 +71,25 @@ function renderSummaryBar(data) {
   const f  = data.financials;
   const hs = data.holdings_summary;
 
+  if (!f) {
+    document.getElementById('summary-bar').innerHTML = '';
+    return;
+  }
+
   // Compute leverage as total_debt / total_assets (not the pre-computed ratio field).
   // Shows '—' when total_debt is null (e.g. NPORT-P debt fields absent in filing).
   const leverageText = (f.total_debt != null && f.total_assets)
     ? `${((f.total_debt / f.total_assets) * 100).toFixed(2)}%`
     : '—';
   const leverageSub = f.total_debt != null ? 'debt / total assets' : 'not reported';
+
+  const positionsCard = (hs?.total_positions != null)
+    ? `<div class="summary-card">
+         <div class="summary-label">Positions</div>
+         <div class="summary-value">${hs.total_positions.toLocaleString()}</div>
+         <div class="summary-sub">${fmtM(hs.total_value_usd)} total value</div>
+       </div>`
+    : '';
 
   document.getElementById('summary-bar').innerHTML = `
     <div class="summary-card">
@@ -97,11 +110,7 @@ function renderSummaryBar(data) {
       <div class="summary-value">${leverageText}</div>
       <div class="summary-sub">${leverageSub}</div>
     </div>
-    <div class="summary-card">
-      <div class="summary-label">Positions</div>
-      <div class="summary-value">${hs.total_positions.toLocaleString()}</div>
-      <div class="summary-sub">${fmtM(hs.total_value_usd)} total value</div>
-    </div>
+    ${positionsCard}
   `;
 }
 
@@ -109,6 +118,10 @@ function renderSummaryBar(data) {
 
 function renderHeaderMeta(data) {
   const ep = data.snapshot_period;
+  if (!ep) {
+    document.getElementById('header-meta').innerHTML = '';
+    return;
+  }
   const domains = ep.domains_available.map(d => domainBadge(d)).join(' ');
   document.getElementById('header-meta').innerHTML = `
     ${periodBadge('Q: ' + ep.period_end_date)}

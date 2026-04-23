@@ -207,7 +207,7 @@ export function renderFlows(container, data) {
     return;
   }
 
-  _sortAsc = true;   // reset to chronological on each entity load
+  _sortAsc = false;  // reset to most-recent-first on each entity load
 
   function redraw() {
     container.innerHTML =

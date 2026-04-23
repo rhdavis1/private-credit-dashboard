@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-04-22T12:24:52Z",
+  "entity": {
+    "cik": "1803498",
+    "name": "Blackstone Private Credit Fund",
+    "entity_type": "BDC",
+    "filing_forms": "10-Q"
+  },
+  "snapshot_period": {
+    "period_end_date": "2025-12-31",
+    "period_type": "annual",
+    "domains_available": [
+      "metrics"
+    ]
+  },
+  "financials": {
+    "as_of": "2025-12-31",
+    "total_assets": 71283570000.0,
+    "total_liabilities": 32427807000.0,
+    "net_assets": 22685065000.0,
+    "total_debt": 30452578000.0,
+    "leverage_ratio": 1.3424064687493733,
+    "source_form": "10-K",
+    "confidence_band": "high"
+  },
+  "financials_history": [
+    {
+      "period_end_date": "2023-03-31",
+      "total_assets": 52692896000.0,
+      "net_assets": 12854820000.0,
+      "total_debt": 26493658000.0,
+      "leverage_ratio": 2.06099019667331
+    },
+    {
+      "period_end_date": "2023-06-30",
+      "total_assets": 52692896000.0,
+      "net_assets": 12854820000.0,
+      "total_debt": 26493658000.0,
+      "leverage_ratio": 2.06099019667331
+    },
+    {
+      "period_end_date": "2023-09-30",
+      "total_assets": 52692896000.0,
+      "net_assets": 12854820000.0,
+      "total_debt": 26493658000.0,
+      "leverage_ratio": 2.06099019667331
+    },
+    {
+      "period_end_date": "2023-12-31",
+      "total_assets": 52692896000.0,
+      "net_assets": 52000.0,
+      "total_debt": 26493658000.0,
+      "leverage_ratio": 509493.42307692306
+    },
+    {
+      "period_end_date": "2024-03-31",
+      "total_assets": 53317236000.0,
+      "net_assets": 22685065000.0,
+      "total_debt": 23179861000.0,
+      "leverage_ratio": 1.0218115310668054
+    },
+    {
+      "period_end_date": "2024-06-30",
+      "total_assets": 53317236000.0,
+      "net_assets": 22685065000.0,
+      "total_debt": 23179861000.0,
+      "leverage_ratio": 1.0218115310668054
+    },
+    {
+      "period_end_date": "2024-09-30",
+      "total_assets": 53317236000.0,
+      "net_assets": 22685065000.0,
+      "total_debt": 23179861000.0,
+      "leverage_ratio": 1.0218115310668054
+    },
+    {
+      "period_end_date": "2024-12-31",
+      "total_assets": 53317236000.0,
+      "net_assets": 12854820000.0,
+      "total_debt": 23179861000.0,
+      "leverage_ratio": 1.8032038566078716
+    },
+    {
+      "period_end_date": "2025-03-31",
+      "total_assets": 71283570000.0,
+      "net_assets": 28534437000.0,
+      "total_debt": 30452578000.0,
+      "leverage_ratio": 1.0672219676175843
+    },
+    {
+      "period_end_date": "2025-06-30",
+      "total_assets": 71283570000.0,
+      "net_assets": 28534437000.0,
+      "total_debt": 30452578000.0,
+      "leverage_ratio": 1.0672219676175843
+    },
+    {
+      "period_end_date": "2025-09-30",
+      "total_assets": 71283570000.0,
+      "net_assets": 28534437000.0,
+      "total_debt": 30452578000.0,
+      "leverage_ratio": 1.0672219676175843
+    },
+    {
+      "period_end_date": "2025-12-31",
+      "total_assets": 71283570000.0,
+      "net_assets": 22685065000.0,
+      "total_debt": 30452578000.0,
+      "leverage_ratio": 1.3424064687493733
+    }
+  ],
+  "fund_flows": [],
+  "holdings_summary": {
+    "positions_needs_review": 0
+  },
+  "holdings": [],
+  "capital_structure": {
+    "as_of": null,
+    "source_form": null,
+    "confidence_band": null,
+    "source_note": null,
+    "total_debt": null,
+    "items": []
+  },
+  "data_quality": {
+    "holdings_needs_review_count": 0,
+    "cap_structure_confidence": null,
+    "warnings": [
+      "No authoritative holdings run for period 2025-12-31",
+      "No authoritative capital_structure run for period 2025-12-31"
+    ]
+  },
+  "source_metadata": {
+    "filings_in_window": 12,
+    "canonical_filings": 12,
+    "periods_with_metrics": 12,
+    "periods_with_holdings": 0,
+    "periods_with_capital_structure": 0,
+    "ingest_run_id": 32
+  }
+}
